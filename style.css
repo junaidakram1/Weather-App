@@ -61,6 +61,37 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+@media (max-width: 768px) {
+  body {
+    /* overflow: hidden; */
+    padding-top: 0px;
+    margin-top: 0px;
+    /* flex-grow: 0; */
+  }
+  main {
+    max-height: 9000px;
+    flex-grow: 0;
+    padding-top: 0px; /* Remove any padding from the top */
+    margin-top: 0px;
+    margin-bottom: 70px;
+  }
+
+  .button {
+    height: 48px;
+    width: 48px;
+    margin-bottom: 5px;
+  }
+
+  .nav-bar {
+    /* flex-grow: 0; */
+    padding-bottom: 2px;
+  }
+
+  .weekly-status {
+    margin-top: 20px;
+  }
+}
+
 img {
   display: block;
 }
@@ -409,6 +440,24 @@ hr {
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 1.2s;
+}
+
+@media (max-width: 768px) {
+  .humidity {
+    display: none;
+  }
+
+  .wind {
+    display: none;
+  }
+
+  .desc {
+    margin-top: 13px;
+  }
+
+  .searchbar-btn {
+    font-size: 30px;
+  }
 }
 
 @keyframes fadeInOpacity {

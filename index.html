@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="fade-in">
+      <h1 class="offscreen">Weather App using Open Weather A P I</h1>
+      <!--Screen reader accessibility -->
+      <section class="search-bar fade-in" id="search-bar">
+        <form action="" class="searchbar-form" id="searchbar-form">
+          <label for="searchbar-text" class="offscreen" role="search"
+            >Enter a location</label
+          >
+
+          <input
+            type="text"
+            id="searchbar-text"
+            class="searchbar-text"
+            role="search"
+            autocomplete="off"
+            size="35"
+            placeholder="City, State (US Only) or Country"
+          />
+
+          <button
+            class="searchbar-btn button"
+            id="searchbar-btn"
+            title="Submit"
+            aria-label="Enter location or zipcode to get weather status"
+          >
+            <i class="fa fa-search"></i>
+            <i class="fa-solid fa-sync fa-spin-custom none"></i>
+          </button>
+        </form>
+      </section>
+
+      <!--For screen reader to skip to current status without navigating -->
+      <a href="#forecast-status" class="skip-link"
+        >Skip to Current Status/Conditions
+      </a>
+
+      <section
+        class="forecast-status fade-in"
+        id="forecast-status"
+        role="region"
+        aria-labelledby="weatherForecast-location"
+      >
+        <h1 class="currentForecast-location" id="currentStatus-location">
+          Current Conditions
+        </h1>
+        <div
+          id="currentForecast-conditions"
+          class="currentForecast-conditions"
+        ></div>
+      </section>
+
+      <nav class="nav-bar fade-in" id="nav-bar">
+        <a href="#weekly-status" class="skip-link">Skip to Weekly Status </a>
+
+        <button
+          id="getLocation"
+          class="button"
+          title="Get Current Location Weather"
+          aria-label="Get current weather status for your desired location"
+        >
+          <i class="fas fa-map-marker-alt"></i>
+          <i class="fas fa-sync fa-spin-custom none"></i>
+        </button>
+
+        <button
+          id="home"
+          class="button"
+          title="Home Weather (Saved Location)"
+          aria-label="Get current weather status for your home location"
+        >
+          <i class="fas fa-home"></i>
+          <i class="fas fa-sync fa-spin-custom none"></i>
+        </button>
+
+        <button
+          id="save-location"
+          class="button"
+          title="Save the current location"
+          aria-label="Save the current location as your home location"
+        >
+          <i class="fas fa-save" id="praise"></i>
+          <i class="fas fa-sync fa-spin-custom none"></i>
+        </button>
+
+        <button
+          id="temp-unit"
+          class="button"
+          title="Toggle Units"
+          aria-label="Toggle between Fahrenheit and Celsius"
+        >
+          <i class="fas fa-chart-bar"></i>
+          <i class="fas fa-sync fa-spin-custom none"></i>
+        </button>
+
+        <button
+          id="refresh"
+          class="button"
+          title="Refresh Weather"
+          aria-label="Refresh the Weather Status"
+        >
+          <i class="fas fa-sync-alt"></i>
+          <i class="fas fa-sync fa-spin-custom none"></i>
+        </button>
+      </nav>
+
+      <hr fade-in />
+
+      <section
+        id="weekly-status"
+        class="weekly-status fade-in"
+        role="region"
+        aria-labelledby="weeklyStatus-title"
+      >
+        <h2 id="weeklyStatus-title" class="weeklyStatus-title offscreen">
+          Weekly Forecast
+        </h2>
+
+        <!-- Fills in dynamically -->
+
+        <div class="weekly-content" id="weekly-content"></div>
+      </section>
+
+      <p id="confirmation" class="offscreen" aria-live="assertive"></p>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
